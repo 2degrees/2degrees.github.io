@@ -155,4 +155,13 @@ article {
         }
     }
 }
+.team-list {
+    li {
+        margin-bottom: 24px;
+
+        h3 {
+            margin-bottom: .5em;
+        }
+    }
+}
 @import "_pygments";
