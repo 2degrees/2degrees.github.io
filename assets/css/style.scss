@@ -181,6 +181,25 @@ article {
         }
     }
 }
+.categories {
+    margin: 0 0 24px;
+    overflow: hidden;
+
+    h5 {
+        float: left;
+        margin-right: .5em;
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+    }
+
+    li {
+        display: inline-block;
+    }
+}
 @import "_pygments";
 
 @include breakpoint($bp_large) {
