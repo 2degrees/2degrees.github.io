@@ -1,3 +1,8 @@
-<span class="meta">
-    {{ include.page.date | date_to_string }} by {% for author in site.data.team %}{% if author.short_name == include.page.author %}{{ author.name }}{% endif %}{% endfor %}
+<span class="meta">{% for author in site.data.team %}{% if author.short_name == include.page.author %}
+    <img
+        src="//gravatar.com/avatar/{{ author.email_md5 }}?s=48"
+        alt="Gravatar of {{ author.name }}"
+    />
+    Written by {{ author.name }}{% endif %}{% endfor %}<br />
+    {{ include.page.date | date_to_string }}
 </span>

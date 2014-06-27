@@ -5,10 +5,10 @@ layout: base
 <h2>
     {{ page.title }}
 </h2>
-{% include metadata.html page=page %}
 <article>
     {{ content }}
 </article>
+{% include metadata.html page=page %}
 
 {% assign previouspage = page.previous %}
 {% assign nextpage = page.next %}

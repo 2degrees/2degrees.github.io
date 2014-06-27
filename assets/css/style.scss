@@ -118,15 +118,11 @@ p, ul {
 
 
     li {
-        margin-bottom: 1em;
+        margin-bottom: 48px;
     }
     a {
         display: block;
         text-decoration: none;
-
-        span {
-            display: block;
-        }
     }
     h4 {
         margin-bottom: .5em;
@@ -134,6 +130,14 @@ p, ul {
 }
 .meta {
     color: #aaa;
+    overflow: hidden;
+    display: block;
+    margin-bottom: 24px;
+
+    img {
+        float: left;
+        margin-right: 10px;
+    }
 }
 article {
     margin-top: 24px;
