@@ -1,0 +1,3 @@
+<span class="meta">
+    {{ include.page.date | date_to_string }} by {% for author in site.data.team %}{% if author.short_name == include.page.author %}{{ author.name }}{% endif %}{% endfor %}
+</span>

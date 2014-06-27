@@ -1,0 +1,8 @@
+permalink: "/:year/:month/:title.html"
+title: "2degrees Developers"
+description: "Development blog by the developers behind 2degrees, the world leading online community for sustainability professionals."
+
+safe: true
+lsi: false
+markdown: redcarpet
+highlighter: pygments

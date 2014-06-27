@@ -1,0 +1,16 @@
+---
+layout: base
+---
+
+<ul class="posts-list">
+{% for post in site.posts %}
+    <li>
+        <a href="{{ post.url }}">
+            <h4>
+                {{ post.title }}
+            </h4>
+            {% include metadata.html page=post %}
+        </a>
+    </li>
+{% endfor %}
+</ul>

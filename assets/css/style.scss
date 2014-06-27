@@ -1,0 +1,158 @@
+@import "_normalize";
+@import "_mixins";
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body {
+    min-height: 100%;
+}
+html {
+    background-color: #eee;
+}
+body {
+    font-family: RobotoDraft, sans-serif;
+    color: #333;
+    font-weight: normal;
+    height: 100%;
+    font-size: 18px;
+}
+a {
+    color: #000;
+    text-decoration: underline;
+
+    &:hover {
+        color: #222;
+        text-decoration: none;
+    }
+    &:visited {
+        color: #222;
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 24px;
+    font-weight: 700;
+    font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
+
+    a {
+        text-decoration: none;
+    }
+}
+h1 {
+    font-size: 3em;
+}
+h2 {
+    font-size: 1.6em;
+}
+h3 {
+    font-size: 1.4em;
+}
+h4 {
+    font-size: 1.2em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+p, ul {
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+.wrapper {
+    width: 800px;
+    margin: 0 48px 48px;
+    padding: 48px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    border-radius: 2px;
+}
+.header {
+    margin-bottom: -24px;
+    background-color: #0f9d58;
+    .header-inner {
+        color: #fff;
+        padding: 48px 0 48px 48px;
+        width: 800px;
+        position: relative;
+    }
+    a {
+        color: inherit;
+    }
+}
+.navigation {
+    position: absolute;
+    right: -48px;
+    top: 72px;
+
+    .item {
+        width: 40px;
+        height: 40px;
+        margin-left: 20px;
+        float: left;
+        a {
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    svg {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    path {
+        fill: #fff;
+    }
+}
+.posts-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+
+    li {
+        margin-bottom: 1em;
+    }
+    a {
+        display: block;
+        text-decoration: none;
+
+        span {
+            display: block;
+        }
+    }
+    h4 {
+        margin-bottom: .5em;
+    }
+}
+.meta {
+    color: #aaa;
+}
+article {
+    margin-top: 24px;
+}
+.page-nav {
+    overflow: hidden;
+    padding: 24px 0;
+    border: 1px solid #ddd;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 24px;
+
+    .page-nav-link {
+        height: 1em;
+        line-height: 1em;
+
+        &.next {
+            float: right;
+        }
+        &.prev {
+            float: left;
+        }
+    }
+}
+@import "_pygments";
