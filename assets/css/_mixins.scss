@@ -1,0 +1,17 @@
+@mixin breakpoint($breakpoint) {
+    @if $breakpoint == $bp_large {
+        @media (min-width: #{$bp_large}) {
+            @content;
+        }
+    }
+    @else if $breakpoint == $bp_not_large {
+        @media (max-width: #{$bp_not_large}) {
+            @content;
+        }
+    }
+    @else {
+        @media (#{$breakpoint}) {
+            @content;
+        }
+    }
+}
