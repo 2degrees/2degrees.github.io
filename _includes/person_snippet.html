@@ -5,4 +5,8 @@
     <span class="meta">
         {{ include.person.email }}
     </span>
+    <img
+    	src="//gravatar.com/avatar/{{ include.person.email_md5 }}?s=100"
+    	alt="Gravatar of {{ include.person.name }}"
+	/>
 </li>
