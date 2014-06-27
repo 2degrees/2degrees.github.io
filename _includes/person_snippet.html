@@ -1,12 +1,12 @@
 <li>
-    <h3>
+    <img
+        src="//gravatar.com/avatar/{{ include.person.email_md5 }}?s=100"
+        alt="Gravatar of {{ include.person.name }}"
+    />
+    <h4>
         {{ include.person.name }}
-    </h3>
+    </h4>
     <span class="meta">
         {{ include.person.email }}
     </span>
-    <img
-    	src="//gravatar.com/avatar/{{ include.person.email_md5 }}?s=100"
-    	alt="Gravatar of {{ include.person.name }}"
-	/>
 </li>
