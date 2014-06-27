@@ -6,3 +6,5 @@ safe: true
 lsi: false
 markdown: redcarpet
 highlighter: pygments
+gems:
+- jekyll-redirect-from
