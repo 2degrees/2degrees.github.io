@@ -1,7 +1,7 @@
 ---
 title: "Announcing hubspot-conection and hubspot-contacts"
 layout: "post"
-permalink: "/2014/06/announcing-hubspot-connection-and-hubspot-contacts.html"
+permalink: "/2014/07/announcing-hubspot-connection-and-hubspot-contacts.html"
 categories: [python, HubSpot]
 author: gil
 ---
