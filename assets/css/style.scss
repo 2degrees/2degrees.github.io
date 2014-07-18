@@ -4,9 +4,7 @@ $bp_not_large: $bp_large - 1;
 @import "_normalize";
 @import "_mixins";
 * {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+    @include box-sizing;
 }
 html, body {
     min-height: 100%;
@@ -138,6 +136,7 @@ p, ul {
     img {
         float: left;
         margin-right: 10px;
+        border-radius: 3px;
     }
 }
 article {
@@ -201,6 +200,16 @@ article {
     }
 }
 @import "_pygments";
+p {
+    code {
+        background-color: #f0f0f0;
+        color: #555;
+        border: 1px solid #eee;
+        padding: 2px 4px;
+        font-size: 90%;
+        white-space: nowrap;
+    }
+}
 
 @include breakpoint($bp_large) {
     .wrapper,

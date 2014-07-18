@@ -1,3 +1,8 @@
+@mixin box-sizing($method: border-box) {
+    -moz-box-sizing: $method;
+    -webkit-box-sizing: $method;
+    box-sizing: $method;
+}
 @mixin breakpoint($breakpoint) {
     @if $breakpoint == $bp_large {
         @media (min-width: #{$bp_large}) {
