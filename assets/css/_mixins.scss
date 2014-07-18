@@ -8,6 +8,11 @@
     -webkit-background-size: $method;
     background-size: $method;
 }
+@mixin box-shadow($shadow) {
+    -moz-box-shadow: $shadow;
+    -webkit-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
 @mixin breakpoint($breakpoint) {
     @if $breakpoint == $bp_large {
         @media (min-width: #{$bp_large}) {
