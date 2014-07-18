@@ -3,6 +3,11 @@
     -webkit-box-sizing: $method;
     box-sizing: $method;
 }
+@mixin background-size($method: cover) {
+    -moz-background-size: $method;
+    -webkit-background-size: $method;
+    background-size: $method;
+}
 @mixin breakpoint($breakpoint) {
     @if $breakpoint == $bp_large {
         @media (min-width: #{$bp_large}) {

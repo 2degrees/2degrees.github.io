@@ -73,6 +73,10 @@ p, ul {
 .header {
     margin-bottom: -24px;
     background-color: #0f9d58;
+    background-image: url(../img/header-bg.png);
+    background-position: 50%;
+    background-attachment: fixed;
+    @include background-size;
 
     .header-inner {
         color: #fff;
