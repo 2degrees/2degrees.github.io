@@ -13,17 +13,58 @@ title: Tags
 <h2>
     Tags
 </h2>
+<p>
+    Select a tag to see the posts in that tag.
+</p>
+<ul class="taglist">
+    <li>
+        <a href="#" data-filter="*">Show All ({{ sortedtags.size }})</a>,
+    </li>
 {% for tag in sortedtags %}
-    <h3 id="{{ tag }}">
-        {{ tag }}
-    </h3>
-    <ul>
-        {% for post in site.categories[tag] %}
-            <li>
-                <a href="{{ post.url }}">
-                    {{ post.title }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
+    <li>
+        <a href="#{{ tag }}" data-filter=".tag-{{ tag }}">{{ tag }} ({{ site.categories[tag]|size }})</a>{% unless forloop.last %}, {% endunless %}
+    </li>
 {% endfor %}
+</ul>
+<div class="tag-items-wrapper">
+    {% for tag in sortedtags %}
+        <div class="tag-item tag-{{ tag }}">
+            <h3 id="{{ tag }}">
+                {{ tag }}
+            </h3>
+            <ul class="tag-posts">
+                {% for post in site.categories[tag] %}
+                    <li>
+                        <a href="{{ post.url }}">
+                            {{ post.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
+<script>
+    $(function () {
+        var $container = $('.tag-items-wrapper')
+        $('.taglist').on( 'click', 'a', function(e) {
+            e.preventDefault();
+            var filterValue = $(this).attr('data-filter');
+            $container.isotope({ filter: filterValue });
+        });
+
+        if(window.location.hash) {
+            $container.isotope({
+                filter: window.location.hash.replace('#','.tag-')
+            });
+        }
+        $container.isotope({
+            itemSelector: '.tag-item',
+            layoutMode: 'vertical',
+            transitionDuration: 0
+        });
+    });
+</script>

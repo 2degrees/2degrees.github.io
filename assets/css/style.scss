@@ -268,3 +268,17 @@ p {
         }
     }
 }
+.taglist {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    display: block;
+    clear: both;
+
+    li {
+        float: left;
+        margin: 0 10px 0 0;
+        padding: 0;
+    }
+}
