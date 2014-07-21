@@ -6,7 +6,13 @@
     <h4>
         {{ include.person.name }}
     </h4>
-    <span class="meta">
+    <span class="meta meta-user meta-email">
         {{ include.person.email }}
     </span>
+    <a
+        href="http://github.com/{{ include.person.github }}"
+        class="meta meta-user meta-github"
+    >
+        {{ include.person.github }} on GitHub
+    </a>
 </li>

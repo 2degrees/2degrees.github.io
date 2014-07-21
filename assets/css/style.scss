@@ -145,6 +145,19 @@ p, ul {
         border-radius: 3px;
     }
 }
+.meta-user {
+    margin-bottom: 1em;
+}
+.meta-github {
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    text-indent: -99em;
+    background-image: url(../img/github.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    display: inline-block;
+}
 article {
     margin-top: 24px;
 }
