@@ -14,9 +14,9 @@ layout: base
 <div class="categories">
     <h5>Tags:</h5>
     <ul>
-    {% for category in page.categories %}
+    {% for tag in page.categories %}
         <li>
-            <a href="{{ site.baseurl }}tags/#{{category}}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+            <a href="{{ site.baseurl }}tags/#{{ tag | handleize | replace: '.','-' }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
         </li>
     {% endfor %}
     </ul>
