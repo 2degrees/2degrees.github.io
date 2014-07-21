@@ -187,7 +187,7 @@ article {
     }
 }
 .categories {
-    margin: 0 0 24px;
+    margin: 0;
     overflow: hidden;
 
     h5 {
@@ -281,4 +281,11 @@ p {
         margin: 0 10px 0 0;
         padding: 0;
     }
+}
+hr {
+    overflow: hidden;
+    border: 0;
+    background-color: #ddd;
+    height: 1px;
+    margin: 24px 0;
 }
