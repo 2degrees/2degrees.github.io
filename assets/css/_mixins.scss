@@ -30,3 +30,49 @@
         }
     }
 }
+@function _transition-property-name($prop, $vendor: false) {
+    @if $vendor and $prop == transform {
+        @return unquote('-'+$vendor+'-'+$prop);
+    }
+    @if $vendor and $prop == box-shadow {
+        @return unquote('-'+$vendor+'-'+$prop);
+    }
+    @if $vendor and $prop == border-radius {
+        @return unquote('-'+$vendor+'-'+$prop);
+    }
+    @else {
+        @return $prop;
+    }
+}
+@function _transition-property-names($props, $vendor: false) {
+    $new-props: ();
+    @each $prop in $props {
+        $new-props: append($new-props,
+            _transition-property-name($prop, $vendor)
+        , comma);
+    }
+    @return $new-props;
+}
+@mixin transition-duration($duration...) {
+    -moz-transition-duration: $duration;
+    -webkit-transition-duration: $duration;
+    transition-duration: $duration;
+}
+@mixin transition-property($property...) {
+    -moz-transition-property:
+        _transition-property-names($property, 'moz');
+    -webkit-transition-property:
+        _transition-property-names($property, 'webkit');
+    transition-property:
+        _transition-property-names($property, false);
+}
+@mixin transition-timing-function($timing-function...) {
+    -webkit-transition-timing-function: $timing-function;
+    -moz-transition-timing-function: $timing-function;
+    transition-timing-function: $timing-function;
+}
+@mixin transition($duration, $property: all, $timing-function: linear) {
+    @include transition-duration($duration);
+    @include transition-property($property);
+    @include transition-timing-function($timing-function);
+}

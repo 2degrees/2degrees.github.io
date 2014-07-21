@@ -35,25 +35,31 @@
                 </a>
             </h1>
             <ul class="navigation">
-                <li class="item home">
-                    <a href="{{ site.baseurl }}">
-                        Home
+                {% capture archive_url %}{{ site.baseurl }}archive/{% endcapture %}
+                <li
+                    class="item archive {% if page.url == archive_url %}active{% endif %}"
+                >
+                    <a href="{{ archive_url }}">
+                        Archive
                     </a>
                 </li>
-                <li class="item tags">
-                    <a href="{{ site.baseurl }}tags/">
+                {% capture tags_url %}{{ site.baseurl }}tags/{% endcapture %}
+                <li
+                    class="item tags {% if page.url == tags_url %}active{% endif %}"
+                >
+                    <a href="{{ tags_url }}">
                         Tags
                     </a>
                 </li>
-                <li class="item team">
-                    <a href="{{ site.baseurl }}team/">
+                {% capture team_url %}{{ site.baseurl }}team/{% endcapture %}
+                <li
+                    class="item team {% if page.url == team_url %}active{% endif %}"
+                >
+                    <a href="{{ team_url }}">
                         Team
                     </a>
                 </li>
             </ul>
-            <p>
-                {{ site.description }}
-            </p>
         </div>
     </header>
     <div class="wrapper">
