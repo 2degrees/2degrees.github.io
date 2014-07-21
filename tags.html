@@ -22,14 +22,14 @@ title: Tags
     </li>
 {% for tag in sortedtags %}
     <li>
-        <a href="#{{ tag }}" data-filter=".tag-{{ tag }}">{{ tag }} ({{ site.categories[tag]|size }})</a>{% unless forloop.last %}, {% endunless %}
+        <a href="#{{ tag | handleize | replace: '.','-' }}" data-filter=".tag-{{ tag | handleize | replace: '.','-' }}">{{ tag }} ({{ site.categories[tag]|size }})</a>{% unless forloop.last %}, {% endunless %}
     </li>
 {% endfor %}
 </ul>
 <div class="tag-items-wrapper">
     {% for tag in sortedtags %}
-        <div class="tag-item tag-{{ tag }}">
-            <h3 id="{{ tag }}">
+        <div class="tag-item tag-{{ tag | handleize | replace: '.','-' }}">
+            <h3 id="{{ tag | handleize | replace: '.','-' }}">
                 {{ tag }}
             </h3>
             <ul class="tag-posts">
