@@ -26,6 +26,7 @@ title: Tags
     </li>
 {% endfor %}
 </ul>
+<hr />
 <div class="tag-items-wrapper">
     {% for tag in sortedtags %}
         <div class="tag-item tag-{{ tag | handleize | replace: '.','-' }}">
