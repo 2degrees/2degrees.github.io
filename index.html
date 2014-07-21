@@ -2,8 +2,12 @@
 layout: base
 ---
 
+<p>
+    {{ site.description }}
+</p>
+<hr />
 <ul class="posts-list">
-{% for post in site.posts %}
+{% for post in site.posts | limit:5 %}
     <li>
         <a href="{{ post.url }}">
             <h4>
@@ -14,3 +18,7 @@ layout: base
     </li>
 {% endfor %}
 </ul>
+<hr />
+<a href="{{ site.baseurl }}archive/">
+    See more posts in the Archive
+</a>
