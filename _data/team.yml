@@ -4,6 +4,7 @@
   email_md5: 0aaa5a982565d82566a96d680fe0526d
   github: omgmog
   area: frontend
+  website_url: http://omgmog.net/
 - short_name: euan
   name: Euan Goddard
   email: euangoddard@2degreesnetwork.com
@@ -15,6 +16,7 @@
   email: gustavonarea@2degreesnetwork.com
   email_md5: fcef945bf4f723ec01c084c130edfc7d
   github: gnarea
+  website_url: http://gustavonarea.net/
   area: backend
 - short_name: fran
   name: Francisco Ruiz
@@ -28,3 +30,4 @@
   email_md5: 82ad008876212125dc919dc104e93be1
   github: lurst
   area: backend
+  website_url: http://lumbercoder.com/

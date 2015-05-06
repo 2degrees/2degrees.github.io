@@ -4,7 +4,11 @@
         alt="Gravatar of {{ include.person.name }}"
     />
     <h4>
-        {{ include.person.name }}
+        {% if include.person.website_url %}
+            <a href="{{ include.person.website_url }}">{{ include.person.name }}</a>
+        {% else %}
+            {{ include.person.name }}
+        {% endif %}
     </h4>
     <span class="meta meta-user meta-email">
         {{ include.person.email }}
