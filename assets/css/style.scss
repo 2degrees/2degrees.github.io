@@ -1,312 +1,359 @@
-$bp_large: 1024px;
-$bp_not_large: $bp_large - 1;
+---
+---
+@import 'variables';
+@import 'mixins';
+@import 'normalize';
+@import 'pygments';
 
-@import "_normalize";
-@import "_mixins";
 * {
-    @include box-sizing;
+  @include box-sizing;
 }
-html, body {
-    min-height: 100%;
-}
-html {
-    background-color: #eee;
-    background-image: url(../img/white_wall_hash.png);
-}
+
+html, 
 body {
-    font-family: RobotoDraft, sans-serif;
-    color: #333;
-    font-weight: normal;
-    height: 100%;
-    font-size: 18px;
+  min-height: 100%;
 }
+
+html {
+  background-image: url('../img/white_wall_hash.png');
+  background-color: map-get($colors, 3);
+}
+
+body {
+  color: map-get($colors, 7);
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  height: 100%;
+}
+
 a {
-    color: #000;
-    text-decoration: underline;
+  color: map-get($colors, 9);
+  text-decoration: underline;
+
+  &:hover,
+  &:visited {
+    color: map-get($colors, 8);
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+  font-family: 'Roboto Slab','ff-tisa-web-pro','Georgia',Arial,sans-serif;
+  font-weight: 700;
+  margin: 0 0 24px;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+p, 
+ul {
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+.wrapper {
+  @include box-shadow(0 2px 10px 0 rgba(0, 0, 0, .26));
+  background-color: map-get($colors, 1);
+  border-radius: 2px;
+  margin: 0 48px 48px;
+  padding: 48px;
+  position: relative;
+  z-index: 100;
+}
+
+.header {
+  @include background-size;
+  @include box-shadow(inset 0 -10px 30px rgba(0, 0, 0, .26));
+  background-attachment: fixed;
+  background-color: map-get($colors, 10);
+  background-image: url('../img/header-bg.png');
+  background-position: 50%;
+  margin-bottom: -200px;
+  position: relative;
+  z-index: 99;
+
+  .header-inner {
+    color: map-get($colors, 1);
+    padding: 48px 48px 224px;
+    position: relative;
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+.navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 72px;
+
+  .item {
+    float: left;
+    margin: 0 0 0 20px;
+  }
+
+  a {
+    @include transition(.2s, color, linear);
+    color: rgba(255, 255, 255, .5);
+    display: block;
+    font-weight: bold;
+    height: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    width: 100%;
 
     &:hover {
-        color: #222;
-        text-decoration: none;
+      color: map-get($colors, 1);
     }
-    &:visited {
-        color: #222;
-    }
-}
-h1, h2, h3, h4, h5, h6 {
-    margin: 0 0 24px;
-    font-weight: 700;
-    font-family: "Roboto Slab","ff-tisa-web-pro","Georgia",Arial,sans-serif;
+  }
 
+  .active {
     a {
-        text-decoration: none;
+      color: map-get($colors, 1);
     }
+  }
 }
-h1 {
-    font-size: 3em;
-}
-h2 {
-    font-size: 1.6em;
-}
-h3 {
-    font-size: 1.4em;
-}
-h4 {
-    font-size: 1.2em;
-}
-h5 {
-    font-size: 1em;
-}
-h6 {
-    font-size: 1em;
-    text-transform: uppercase;
-}
-p, ul {
-    line-height: 24px;
-    margin: 0 0 24px;
-}
-.wrapper {
-    margin: 0 48px 48px;
-    padding: 48px;
-    background-color: #fff;
-    @include box-shadow(0 2px 10px 0 rgba(0, 0, 0, 0.26));
-    border-radius: 2px;
-    position: relative;
-    z-index: 100;
-}
-.header {
-    margin-bottom: -200px;
-    background-color: #0f9d58;
-    background-image: url(../img/header-bg.png);
-    background-position: 50%;
-    background-attachment: fixed;
-    @include background-size;
-    @include box-shadow(inset 0 -10px 30px rgba(0,0,0,.26));
-    position: relative;
-    z-index: 99;
 
-    .header-inner {
-        color: #fff;
-        padding: 48px 48px 224px;
-        position: relative;
-    }
-    a {
-        color: inherit;
-    }
-}
-.navigation {
-    position: absolute;
-    top: 72px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    .item {
-        margin: 0 0 0 20px;
-        float: left;
-        a {
-            display: block;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            text-decoration: none;
-            font-weight: bold;
-            color: rgba(255,255,255,.5);
-            @include transition(.2s, color, linear);
-
-            &:hover {
-                color: #fff;
-            }
-        }
-        &.active {
-            a {
-                color: #fff;
-            }
-        }
-    }
-}
 .posts-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
+  li {
+    margin-bottom: 48px;
+  }
 
-    li {
-        margin-bottom: 48px;
-    }
-    a {
-        display: block;
-        text-decoration: none;
-    }
-    h4 {
-        margin-bottom: .5em;
-    }
-}
-.meta {
-    color: #aaa;
-    overflow: hidden;
+  a {
     display: block;
+    text-decoration: none;
+  }
+
+  h4 {
+    margin-bottom: .5em;
+  }
+}
+
+.meta {
+  color: map-get($colors, 5);
+  display: block;
+  margin-bottom: 24px;
+  overflow: hidden;
+
+  img {
+    border-radius: 3px;
+    float: left;
+    margin-right: 10px;
+  }
+}
+
+.meta-user {
+  margin-bottom: 1em;
+}
+
+.meta-github {
+  background-image: url('../img/github.png');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 20px;
+  overflow: hidden;
+  text-indent: -99em;
+  width: 20px;
+}
+
+article {
+  margin-top: 24px;
+}
+
+.page-nav {
+  border: 1px solid map-get($colors, 4);
+  border-left-width: 0;
+  border-right-width: 0;
+  margin-bottom: 24px;
+  overflow: hidden;
+  padding: 24px 0;
+
+  .page-nav-link {
+    height: 1em;
+    line-height: 1em;
+
+    &.next {
+      float: right;
+    }
+
+    &.prev {
+      float: left;
+    }
+  }
+}
+
+.team-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
     margin-bottom: 24px;
+    overflow: hidden;
+
+    h4 {
+      margin-bottom: .5em;
+    }
 
     img {
-        float: left;
-        margin-right: 10px;
-        border-radius: 3px;
+      float: left;
+      margin-right: 20px;
     }
+  }
 }
-.meta-user {
-    margin-bottom: 1em;
-}
-.meta-github {
-    width: 20px;
-    height: 20px;
-    overflow: hidden;
-    text-indent: -99em;
-    background-image: url(../img/github.png);
-    background-repeat: no-repeat;
-    background-position: 50%;
-    display: inline-block;
-}
-article {
-    margin-top: 24px;
-}
-.page-nav {
-    overflow: hidden;
-    padding: 24px 0;
-    border: 1px solid #ddd;
-    border-left: 0;
-    border-right: 0;
-    margin-bottom: 24px;
 
-    .page-nav-link {
-        height: 1em;
-        line-height: 1em;
-
-        &.next {
-            float: right;
-        }
-        &.prev {
-            float: left;
-        }
-    }
-}
-.team-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-        margin-bottom: 24px;
-        overflow: hidden;
-
-        h4 {
-            margin-bottom: .5em;
-        }
-        img {
-            float: left;
-            margin-right: 20px;
-        }
-    }
-}
 .categories {
-    margin: 0;
-    overflow: hidden;
+  margin: 0;
+  overflow: hidden;
 
-    h5 {
-        float: left;
-        margin-right: .5em;
-    }
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: inline-block;
-    }
+  h5 {
+    float: left;
+    margin-right: .5em;
+  }
 
-    li {
-        display: inline-block;
-    }
-}
-@import "_pygments";
-p {
-    code {
-        background-color: #f0f0f0;
-        color: #555;
-        border: 1px solid #eee;
-        padding: 2px 4px;
-        font-size: 90%;
-        white-space: nowrap;
-    }
-}
-
-@include breakpoint($bp_large) {
-    .wrapper,
-    .header .header-inner {
-        width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .navigation {
-        right: 0;
-    }
-    .header {
-
-        h1,
-        p {
-            margin-left: -48px;
-        }
-    }
-}
-@include breakpoint($bp_not_large) {
-    .wrapper,
-    .header .header-inner {
-        max-width: 100%;
-        width: auto;
-        margin: 0 10px 10px;
-        padding: 20px;
-    }
-    .header {
-        margin-bottom: -40px;
-
-        h1 {
-            text-align: center;
-        }
-        p {
-            display: none;
-        }
-    }
-    .navigation {
-        position: static;
-        display: block;
-        overflow: hidden;
-        margin-bottom: 20px;
-        text-align: center;
-
-        .item {
-            float: none;
-            display: inline-block;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-    }
-}
-.taglist {
-    margin: 0 0 40px;
-    padding: 0;
+  ul {
+    display: inline-block;
     list-style: none;
-    overflow: hidden;
-    display: block;
-    clear: both;
+    margin: 0;
+    padding: 0;
+  }
 
-    li {
-        float: left;
-        margin: 0 10px 0 0;
-        padding: 0;
-    }
+  li {
+    display: inline-block;
+  }
 }
-hr {
+
+p {
+  code {
+    background-color: map-get($colors, 2);
+    border: 1px solid map-get($colors, 3);
+    color: map-get($colors, 6);
+    font-size: 90%;
+    padding: 2px 4px;
+    white-space: nowrap;
+  }
+}
+
+@include breakpoint($bp-large) {
+  .wrapper,
+  .header .header-inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+  }
+
+  .navigation {
+    right: 0;
+  }
+
+  .header {
+    h1,
+    p {
+      margin-left: -48px;
+    }
+  }
+}
+
+@include breakpoint($bp-not-large) {
+  .wrapper,
+  .header .header-inner {
+    margin: 0 10px 10px;
+    max-width: 100%;
+    padding: 20px;
+    width: auto;
+  }
+
+  .header {
+    margin-bottom: -40px;
+
+    h1 {
+      text-align: center;
+    }
+
+    p {
+      display: none;
+    }
+  }
+
+  .navigation {
+    display: block;
+    margin-bottom: 20px;
     overflow: hidden;
-    border: 0;
-    background-color: #ddd;
-    height: 1px;
-    margin: 24px 0;
+    position: static;
+    text-align: center;
+
+    .item {
+      display: inline-block;
+      float: none;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.taglist {
+  clear: both;
+  display: block;
+  list-style: none;
+  margin: 0 0 40px;
+  overflow: hidden;
+  padding: 0;
+
+  li {
+    float: left;
+    margin: 0 10px 0 0;
+    padding: 0;
+  }
+}
+
+hr {
+  background-color: map-get($colors, 4);
+  border: 0;
+  height: 1px;
+  margin: 24px 0;
+  overflow: hidden;
 }

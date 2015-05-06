@@ -8,3 +8,5 @@ markdown: redcarpet
 highlighter: pygments
 gems:
 - jekyll-redirect-from
+sass:
+    style: compressed

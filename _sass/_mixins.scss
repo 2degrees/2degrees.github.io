@@ -14,13 +14,13 @@
     box-shadow: $shadow;
 }
 @mixin breakpoint($breakpoint) {
-    @if $breakpoint == $bp_large {
-        @media (min-width: #{$bp_large}) {
+    @if $breakpoint == $bp-large {
+        @media (min-width: #{$bp-large}) {
             @content;
         }
     }
-    @else if $breakpoint == $bp_not_large {
-        @media (max-width: #{$bp_not_large}) {
+    @else if $breakpoint == $bp-not-large {
+        @media (max-width: #{$bp-not-large}) {
             @content;
         }
     }
