@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>{{ site.title }}</title>
+        <description>{{ site.description }}</description>
+        <link>{{ site.baseurl }}</link>
+        <atom:link href="{{ site.baseurl }}search/label/python" rel="self" type="application/rss+xml" />
+        {% for post in site.posts limit:10 %}
+            {% if post.categories contains 'django' %}
+                <item>
+                    <title>
+                        {{ post.title | replace:'&mdash;','-'}}
+                    </title>
+                    <description>
+                        {{ post.content | xml_escape | replace:'&mdash;','-' }}
+                    </description>
+                    <pubDate>
+                        {{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}
+                    </pubDate>
+                    <link>
+                        {{ site.baseurl }}{{ post.url | replace_first:'/','' }}
+                    </link>
+                    <guid isPermaLink="true">
+                        {{ site.baseurl }}{{ post.url | replace_first:'/','' }}
+                    </guid>
+                </item>
+            {% endif %}
+        {% endfor %}
+    </channel>
+</rss>
