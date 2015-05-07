@@ -1,7 +1,7 @@
 ---
 title: "Looking for Senior/Mid-Level Developers to Change the World!"
 layout: "post"
-date: "2015-05-07 09:00:00"
+date: "2015-05-08 09:00:00"
 categories: [django, python, jobs]
 author: gustavo
 ---
