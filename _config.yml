@@ -5,7 +5,7 @@ baseurl: 'http://dev.2degreesnetwork.com/'
 safe: true
 lsi: false
 markdown: redcarpet
-highlighter: pygments
+highlighter: rouge
 gems:
 - jekyll-redirect-from
 sass:
