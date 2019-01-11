@@ -1,26 +1,6 @@
-- short_name: euan
-  name: Euan Goddard
-  email: euangoddard@2degreesnetwork.com
-  email_md5: 521784fd406e2e7abb27d6dfeecbd7c2
-  github: euangoddard
-  area: backend
-- short_name: gustavo
-  name: Gustavo Narea
-  email: gustavonarea@2degreesnetwork.com
-  email_md5: fcef945bf4f723ec01c084c130edfc7d
-  github: gnarea
-  website_url: http://gustavonarea.net/
-  area: backend
 - short_name: fran
   name: Francisco Ruiz
   email: franciscoruiz@2degreesnetwork.com
   email_md5: 1ef7a42298053e88e5d79f7a77ad03fe
   github: franciscoruiz
   area: backend
-- short_name: gil
-  name: Gil Gonçalves
-  email: gilbertogoncalves@2degreesnetwork.com
-  email_md5: 82ad008876212125dc919dc104e93be1
-  github: lurst
-  area: backend
-  website_url: http://lumbercoder.com/
