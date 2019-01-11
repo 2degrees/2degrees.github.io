@@ -4,7 +4,6 @@ description: "This is the development blog by the developers behind 2degrees."
 baseurl: 'http://dev.2degreesnetwork.com/'
 safe: true
 lsi: false
-markdown: redcarpet
 highlighter: rouge
 gems:
 - jekyll-redirect-from
